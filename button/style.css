@@ -426,6 +426,9 @@ body {
 	25% {
 		transform:translateX(200%) scaleX(200%);
 	}
+	50% {
+		transform:scaleX(100%);
+	}
 	75% {
 		transform:translateX(-100%) scaleX(200%);
 	}
@@ -459,7 +462,7 @@ body {
 }
 
 .load {
-	width:80%;
+	width:60%;
 	display:flex;
 	flex-direction:row;
 	justify-content:space-evenly;
@@ -468,12 +471,45 @@ body {
 
 .loadbar {
 	display:inline-block;
-	width:15px;
+	width:12px;
 	height:70px;
 	background-color:#76D7A3;
 }
 
+.loadbar--1 {
+	animation:loading 2000ms infinite alternate ease-in-out backwards;
+}
+.loadbar--2 {
+	animation:loading 2000ms 250ms infinite alternate ease-in-out backwards;
+}
+.loadbar--3 {
+	animation:loading 2000ms 500ms infinite alternate ease-in-out backwards;
+}
+.loadbar--4 {
+	animation:loading 2000ms 750ms infinite alternate ease-in-out backwards;
+}
 
-/* BOUTON 14 */
-/* --------- */
+.button--14:hover + .load > .loadbar--1 {
+	animation-play-state:paused;
+}
+.button--14:hover + .load > .loadbar--2 {
+	animation-play-state:paused;
+}
+.button--14:hover + .load > .loadbar--3 {
+	animation-play-state:paused;
+}
+.button--14:hover + .load > .loadbar--4 {
+	animation-play-state:paused;
+}
+
+
+
+@keyframes loading {
+	0% {
+		transform:scaleY(0.3);
+	}
+	100% {
+		transform:scaleY(1.0);
+	}
+}
 
